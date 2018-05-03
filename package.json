@@ -18,6 +18,7 @@
   "homepage": "https://github.com/yjw81/wonder_admin#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^3.8.1",
     "gulp-minify-html": "^1.0.6",
