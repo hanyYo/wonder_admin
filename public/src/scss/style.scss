@@ -35,16 +35,27 @@ img{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
 }
-
-body{
-  &.is_dim:after{
-    position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.5);content:'';z-index:10;
-  }
-}
-
+body{background:#eee;}
 
 //공통
 #wrap{
-  background:red;
-  #container{background:yellow;}
+}
+.gnb_wrap{
+  height:48px;border-bottom:2px solid #cfcfcf;overflow:hidden;background:#fff;
+  &:after{content:"";display:block;clear:both;}
+  .h1{float:left;}
+  .gnb{
+    float:left;
+    ul{
+      &:after{content:"";display:block;clear:both;}
+      li{float:left;}
+    }
+  }
+}
+.container{
+  padding:0;
+  .lnb{
+    position:fixed;left:0;top:50px;bottom:0;width:200px;border-right:1px solid #cfcfcf;background:#dcdcdc;
+  }
+  .content{margin-left:200px;}
 }

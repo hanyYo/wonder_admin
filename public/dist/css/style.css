@@ -90,17 +90,38 @@ img {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent; }
 
-body.is_dim:after {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  content: '';
-  z-index: 10; }
+body {
+  background: #eee; }
 
-#wrap {
-  background: red; }
-  #wrap #container {
-    background: yellow; }
+.gnb_wrap {
+  height: 48px;
+  border-bottom: 2px solid #cfcfcf;
+  overflow: hidden;
+  background: #fff; }
+  .gnb_wrap:after {
+    content: "";
+    display: block;
+    clear: both; }
+  .gnb_wrap .h1 {
+    float: left; }
+  .gnb_wrap .gnb {
+    float: left; }
+    .gnb_wrap .gnb ul:after {
+      content: "";
+      display: block;
+      clear: both; }
+    .gnb_wrap .gnb ul li {
+      float: left; }
+
+.container {
+  padding: 0; }
+  .container .lnb {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    width: 200px;
+    border-right: 1px solid #cfcfcf;
+    background: #dcdcdc; }
+  .container .content {
+    margin-left: 200px; }
