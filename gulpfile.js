@@ -40,7 +40,7 @@ gulp.task('compile-sass', function () {
 });
 
 //파일 fileinclude
-gulp.task('fileinclude', function() {
+gulp.task('file-include', function() {
     return gulp.src(paths.html)
     .pipe(fileinclude({
         prefix: '@@',
@@ -54,13 +54,14 @@ gulp.task('watch', function () {
 	livereload.listen();
 	gulp.watch(paths.js, ['combine-js']);
 	gulp.watch(paths.scss, ['compile-sass']);
-	gulp.watch(paths.html, ['compress-html']);
+	gulp.watch(paths.html, ['file-include']);
 	gulp.watch(dist + '/**').on('change', livereload.changed);
 });
 
 //기본 task 설정
 gulp.task('default', [
-	'server', 'combine-js',
-	'compile-sass', 'fileinclude',
+	'server',
+	'combine-js',
+	'compile-sass',
 	'watch'
 ]);
