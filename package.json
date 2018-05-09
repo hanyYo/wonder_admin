@@ -20,8 +20,8 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.0.1",
     "gulp-livereload": "^3.8.1",
-    "gulp-minify-html": "^1.0.6",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0",
     "gulp-webserver": "^0.9.1"

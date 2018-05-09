@@ -2,10 +2,10 @@ var gulp = require('gulp');
 var webserver = require('gulp-webserver');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var minifyhtml = require('gulp-minify-html');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var cleancss = require('gulp-clean-css');
+var fileinclude = require('gulp-file-include');
 
 var src = 'public/src';
 var dist = 'public/dist';
@@ -39,11 +39,14 @@ gulp.task('compile-sass', function () {
 		.pipe(gulp.dest(dist + '/css'));
 });
 
-// HTML 파일을 압축한다.
-gulp.task('compress-html', function () {
-	return gulp.src(paths.html)
-		//.pipe(minifyhtml())
-		.pipe(gulp.dest(dist + '/'));
+//파일 fileinclude
+gulp.task('fileinclude', function() {
+    return gulp.src(paths.html)
+    .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+    }))
+    .pipe(gulp.dest(dist + '/'));
 });
 
 // 파일 변경 감지 및 브라우저 재시작
@@ -58,6 +61,6 @@ gulp.task('watch', function () {
 //기본 task 설정
 gulp.task('default', [
 	'server', 'combine-js',
-	'compile-sass', 'compress-html',
+	'compile-sass', 'fileinclude',
 	'watch'
 ]);
