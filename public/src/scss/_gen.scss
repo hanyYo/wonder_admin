@@ -1,6 +1,4 @@
-.left_col {
-  background: #2A3F54;
-}
+
 .nav-sm .container.body .col-md-3.left_col {
   min-height: 100%;
   width: 70px;
@@ -99,7 +97,7 @@
   text-transform: uppercase;
   letter-spacing: .5px;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 14px;
   margin-bottom: 0;
   margin-top: 0;
   text-shadow: 1px 1px #000;
@@ -200,9 +198,6 @@
   height: 100%;
   position: fixed;
 }
-body .container.body .right_col {
-  background: #F7F7F7;
-}
 .nav-md .container.body .right_col {
   padding: 10px 20px 0;
   margin-left: 230px;
@@ -210,7 +205,6 @@ body .container.body .right_col {
 .nav_title {
   width: 230px;
   float: left;
-  background: #2A3F54;
   border-radius: 0;
   height: 57px;
 }
@@ -335,17 +329,14 @@ body .container.body .right_col {
 .top_nav .nav>li>a:focus, .top_nav .nav>li>a:hover, .top_nav .nav .open>a, .top_nav .nav .open>a:focus, .top_nav .nav .open>a:hover {
   background: #D9DEE4;
 }
-body {
-  color: #73879C;
-  background: #2A3F54;
-  font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.471;
-}
 .main_container .top_nav {
   display: block;
   margin-left: 230px;
+  &:after{
+    display:block;
+    clear:both;
+    content:'';
+  }
 }
 .main_container {}
 .no-padding {
@@ -380,7 +371,7 @@ a:hover, a:focus {
   background: transparent;
 }
 .nav.child_menu {
-  display: none;
+  display: none;position:relative;
 }
 .nav.child_menu li:hover,
 .nav.child_menu li.active {
@@ -433,7 +424,7 @@ a:hover, a:focus {
   padding: 13px 15px 12px;
 }
 .nav.side-menu> li.current-page, .nav.side-menu> li.active {
-  border-right: 5px solid #1ABB9C;
+  border-right: 5px solid #f54ea2;
 }
 .nav li.current-page {
   background: rgba(255, 255, 255, 0.05);
@@ -447,10 +438,10 @@ a:hover, a:focus {
 .nav.side-menu> li.active > a {
   text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5b6479), color-stop(100%, #4c5566)), #686e78;
-  background: -webkit-linear-gradient(#334556, #2C4257), #2A3F54;
-  background: -moz-linear-gradient(#334556, #2C4257), #2A3F54;
-  background: -o-linear-gradient(#334556, #2C4257), #2A3F54;
-  background: linear-gradient(#334556, #2C4257), #2A3F54;
+  background: -webkit-linear-gradient(#666, #444), #444;
+  background: -moz-linear-gradient(#666, #444), #444;
+  background: -o-linear-gradient(#666, #444), #444;
+  background: linear-gradient(#666, #444), #444;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
@@ -657,10 +648,6 @@ article.media {
 .expand h2 {
   width: 85%;
   float: left;
-}
-h2 {
-  font-size: 18px;
-  font-weight: 400;
 }
 #left, #right {
   display: table;

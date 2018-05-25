@@ -1,13 +1,33 @@
 @charset 'utf-8';
 
-@import "gentella/gen.scss";
+@import "_gen.scss";
 
-//샘플
-.sample_box{
-  padding:10px;margin:20px 0 30px;border-radius:5px;background:#f4f4f4;
-  &:before{content:"sample";display:block;padding-bottom:10px;text-align:right;color:red;}
-}
+abbr,abbr[data-original-title], abbr[title]{text-decoration:none}
 
 .nav{
   display:block;
+}
+#lnb{
+  overflow:auto;position:fixed;top:0;bottom:0;left:0;background:#292929;
+  &::-webkit-scrollbar {
+    width: 8px
+  }
+
+  &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,.3)
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: #444;
+      outline: 1px solid #708090;
+  }
+}
+.tit_sec{
+  margin:30px 0 15px;
+}
+.example{
+  padding:10px 20px;
+  border:1px solid #000;
+  -webkit-border-radius:5px;
+  border-radius:5px;
 }
