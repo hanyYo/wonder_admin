@@ -37,6 +37,12 @@ abbr,abbr[data-original-title], abbr[title]{text-decoration:none}
   -webkit-border-radius:5px;
   border-radius:5px;
 }
+pre[class*="language-"]{
+  max-height:500px;
+}
+div.code-toolbar > .toolbar{
+  right:1.2em;
+}
 
 // btn
 .btn-link{color:#000;}
@@ -163,4 +169,8 @@ input[type=radio].form-check-input{
 
 .progress-bar{
   background-color:#292929;
+}
+
+.srh_sec{
+  @extend .example;
 }
