@@ -7,6 +7,12 @@ abbr,abbr[data-original-title], abbr[title]{text-decoration:none}
 ._nav{
   display:block;
 }
+
+._nav_personal{
+  float:right;padding:7px 10px 0 0;text-align:right;
+  .dropdown{display:inline-block;}
+}
+
 #lnb{
   overflow:auto;position:fixed;top:0;bottom:0;left:0;background:#292929;
   &::-webkit-scrollbar {
@@ -30,4 +36,58 @@ abbr,abbr[data-original-title], abbr[title]{text-decoration:none}
   border:1px solid #000;
   -webkit-border-radius:5px;
   border-radius:5px;
+}
+
+
+// btn
+.btn-link{color:#000;}
+.btn-link:hover{color:#000;}
+.btn-light{
+  color:#fff;
+  background:#959595;
+}
+.btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle,
+.btn-light:hover{
+  color:#fff;
+  background:#000;
+}
+.btn-dark{
+  color:#fff;
+  background:#000;
+}
+.btn-dark:hover{
+  color:#fff;
+  background:#000;
+}
+
+//breadcrumb
+.breadcrumb{
+  background:#eee;
+  .breadcrumb-item{
+    &.active{color:#000;}
+    &+.breadcrumb-item::before{color:#999;}
+    a{
+      color:#999;
+    }
+  }
+}
+
+//card
+.card{border-radius:0;border:1px solid #efefef;}
+.card-header{
+  border-bottom:none;background:#fff;
+  &:first-child{border-radius:0;}
+}
+.card-body{
+  color:#7a7a7a;border-top:1px solid #efefef;background:#f6f6f6;
+}
+
+// tab
+.nav-tabs{
+  .nav-link{
+    color:#999;
+    &.active{color:#000;}
+  }
 }
