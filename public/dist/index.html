@@ -15,6 +15,7 @@
 <!-- bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
+
 <!-- custom -->
 <link rel="stylesheet" href="./css/prism.css">
 <link rel="stylesheet" href="./css/style.css">
@@ -22,6 +23,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<!-- sweetalert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script src="./js/script.js"></script>
 
@@ -61,6 +65,7 @@
                     <li><a href="index.html#Button_group">Button Group</a></li>
                     <li><a href="index.html#Collapse">Collapse(Accordion)</a></li>
                     <li><a href="index.html#Dropdowns">Dropdowns</a></li>
+                    <li><a href="index.html#form">form group</a></li>
                     <li><a href="index.html#Modal">Modal</a></li>
                     <li><a href="index.html#Navs">Navs(Tab)</a></li>
                     <li><a href="index.html#Progress">Progress</a></li>
@@ -126,13 +131,79 @@
     </pre>
 
     <h3 id="Alert" class="tit_sec">Alert</h3>
-    <div class="example">
-    </div>
-    <pre class="language-markup">
+    <pre class="language-JavaScript">
       <code>
-
-      </code>
+    swal("Hello world!");</code>
     </pre>
+    <div class="example">
+      <button type="button" id="btn_swa" class="btn btn-dark" >Preview</button>
+    </div>
+    <script>
+      document.getElementById('btn_swa').onclick = function () {
+        swal("Hello world!");
+      }
+    </script>
+
+    <h4 class="tit_sec">Alert(success)</h4>
+    <pre class="language-JavaScript">
+      <code>
+    swal("Good job!", "You clicked the button!", "success", {
+      button: "Aww yiss!",
+    });</code>
+    </pre>
+    <div class="example">
+      <button type="button" id="btn_swa2" class="btn btn-dark" >Preview success</button>
+    </div>
+    <script>
+      document.getElementById('btn_swa2').onclick = function () {
+        swal("Good job!", "You clicked the button!", "success", {
+          button: "Aww yiss!",
+        });
+      }
+    </script>
+
+    <h4 class="tit_sec">Alert confirm</h4>
+    <pre class="language-JavaScript">
+      <code>
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });</code>
+    </pre>
+    <div class="example">
+      <button type="button" id="btn_swa3" class="btn btn-dark" >Preview confirm</button>
+    </div>
+    <script>
+      document.getElementById('btn_swa3').onclick = function () {
+        swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+      }
+    </script>
+
 
     <h3 id="Badge" class="tit_sec">Badge</h3>
     <div class="example">
@@ -339,6 +410,312 @@
     &lt;button class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Something else here&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+      </code>
+    </pre>
+
+    <h3 id="form" class="tit_sec">form group</h3>
+    <div class="example">
+      <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Example label</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Another label</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+      </form>
+    </div>
+    <pre class="language-markup">
+      <code>
+    &lt;form&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;formGroupExampleInput&quot;&gt;Example label&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;formGroupExampleInput&quot; placeholder=&quot;Example input&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;formGroupExampleInput2&quot;&gt;Another label&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;formGroupExampleInput2&quot; placeholder=&quot;Another input&quot;&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+      </code>
+    </pre>
+
+    <h4 class="tit_sec">Form grid</h4>
+    <div class="example">
+      <form>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name">
+          </div>
+        </div>
+      </form>
+    </div>
+    <pre class="language-markup">
+      <code>
+  &lt;form&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col&quot;&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;First name&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col&quot;&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Last name&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+      </code>
+    </pre>
+
+    <h4 class="tit_sec">Inline forms</h4>
+    <div class="example">
+      <form class="form-inline">
+        <label class="sr-only" for="inlineFormInputName2">Name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
+
+        <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+        </div>
+
+        <div class="form-check mb-2 mr-sm-2">
+          <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+          <label class="form-check-label" for="inlineFormCheck">
+            Remember me
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-dark mb-2">Submit</button>
+      </form>
+    </div>
+    <pre class="language-markup">
+      <code>
+    &lt;form class=&quot;form-inline&quot;&gt;
+      &lt;label class=&quot;sr-only&quot; for=&quot;inlineFormInputName2&quot;&gt;Name&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control mb-2 mr-sm-2&quot; id=&quot;inlineFormInputName2&quot; placeholder=&quot;Jane Doe&quot;&gt;
+
+      &lt;label class=&quot;sr-only&quot; for=&quot;inlineFormInputGroupUsername2&quot;&gt;Username&lt;/label&gt;
+      &lt;div class=&quot;input-group mb-2 mr-sm-2&quot;&gt;
+        &lt;div class=&quot;input-group-prepend&quot;&gt;
+          &lt;div class=&quot;input-group-text&quot;&gt;@&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;inlineFormInputGroupUsername2&quot; placeholder=&quot;Username&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-check mb-2 mr-sm-2&quot;&gt;
+        &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;inlineFormCheck&quot;&gt;
+        &lt;label class=&quot;form-check-label&quot; for=&quot;inlineFormCheck&quot;&gt;
+          Remember me
+        &lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary mb-2&quot;&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+      </code>
+    </pre>
+
+    <h4 class="tit_sec">textarea</h4>
+    <div class="example">
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      </form>
+    </div>
+    <pre class="language-markup">
+      <code>
+    &lt;form&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;exampleFormControlTextarea1&quot;&gt;Example textarea&lt;/label&gt;
+        &lt;textarea class=&quot;form-control&quot; id=&quot;exampleFormControlTextarea1&quot; rows=&quot;3&quot;&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+      </code>
+    </pre>
+
+    <h4 class="tit_sec">Checkboxes and radios</h4>
+    <div class="example">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Default checkbox
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+        <label class="form-check-label" for="defaultCheck2">
+          Disabled checkbox
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Default radio
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Second default radio
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+        <label class="form-check-label" for="exampleRadios3">
+          Disabled radio
+        </label>
+      </div>
+    </div>
+    <pre class="language-markup">
+      <code>
+    &lt;div class=&quot;form-check&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;&quot; id=&quot;defaultCheck1&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;defaultCheck1&quot;&gt;
+        Default checkbox
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-check&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;&quot; id=&quot;defaultCheck2&quot; disabled&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;defaultCheck2&quot;&gt;
+        Disabled checkbox
+      &lt;/label&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;form-check&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;exampleRadios&quot; id=&quot;exampleRadios1&quot; value=&quot;option1&quot; checked&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;exampleRadios1&quot;&gt;
+        Default radio
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-check&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;exampleRadios&quot; id=&quot;exampleRadios2&quot; value=&quot;option2&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;exampleRadios2&quot;&gt;
+        Second default radio
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-check disabled&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;exampleRadios&quot; id=&quot;exampleRadios3&quot; value=&quot;option3&quot; disabled&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;exampleRadios3&quot;&gt;
+        Disabled radio
+      &lt;/label&gt;
+    &lt;/div&gt;
+      </code>
+    </pre>
+
+    <h4 class="tit_sec">Inline checkboxes and radios</h4>
+    <div class="example">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+      </div>
+      <br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+        <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+      </div>
+    </div>
+    <pre class="language-markup">
+      <code>
+    &lt;div class=&quot;form-check form-check-inline&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;inlineCheckbox1&quot; value=&quot;option1&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;inlineCheckbox1&quot;&gt;1&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-check form-check-inline&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;inlineCheckbox2&quot; value=&quot;option2&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;inlineCheckbox2&quot;&gt;2&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-check form-check-inline&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;inlineCheckbox3&quot; value=&quot;option3&quot; disabled&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;inlineCheckbox3&quot;&gt;3 (disabled)&lt;/label&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;form-check form-check-inline&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; id=&quot;inlineRadio1&quot; value=&quot;option1&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;inlineRadio1&quot;&gt;1&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-check form-check-inline&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; id=&quot;inlineRadio2&quot; value=&quot;option2&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;inlineRadio2&quot;&gt;2&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-check form-check-inline&quot;&gt;
+      &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; id=&quot;inlineRadio3&quot; value=&quot;option3&quot; disabled&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;inlineRadio3&quot;&gt;3 (disabled)&lt;/label&gt;
+    &lt;/div&gt;
+      </code>
+    </pre>
+
+    <h4 class="tit_sec">Inline select</h4>
+    <div class="example">
+      <form class="form-inline">
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </form>
+    </div>
+    <pre class="language-markup">
+      <code>
+    &lt;form class=&quot;form-inline&quot;&gt;
+      &lt;select class=&quot;custom-select my-1 mr-sm-2&quot; id=&quot;inlineFormCustomSelectPref&quot;&gt;
+        &lt;option selected&gt;Choose...&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;One&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Two&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Three&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;select class=&quot;custom-select my-1 mr-sm-2&quot; id=&quot;inlineFormCustomSelectPref2&quot;&gt;
+        &lt;option selected&gt;Choose...&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;One&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Two&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Three&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/form&gt;
+      </code>
+    </pre>
+
+    <h4 class="tit_sec">File browser</h4>
+    <div class="example">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+      </div>
+    </div>
+    <pre class="language-markup">
+      <code>
+    &lt;div class=&quot;custom-file&quot;&gt;
+      &lt;input type=&quot;file&quot; class=&quot;custom-file-input&quot; id=&quot;customFile&quot;&gt;
+      &lt;label class=&quot;custom-file-label&quot; for=&quot;customFile&quot;&gt;Choose file&lt;/label&gt;
+    &lt;/div&gt;
       </code>
     </pre>
 
