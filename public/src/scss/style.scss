@@ -38,7 +38,6 @@ abbr,abbr[data-original-title], abbr[title]{text-decoration:none}
   border-radius:5px;
 }
 
-
 // btn
 .btn-link{color:#000;}
 .btn-link:hover{color:#000;}
@@ -90,4 +89,78 @@ abbr,abbr[data-original-title], abbr[title]{text-decoration:none}
     color:#999;
     &.active{color:#000;}
   }
+}
+
+//sweetalert
+.swal-button{
+  background-color:#292929;
+}
+.swal-icon--success__line{
+  background-color:#292929;
+}
+.swal-icon--success{
+  border-color:#292929;
+}
+.swal-icon--success__ring{
+  border: 4px solid hsla(0,0,17%,.2)
+}
+.swal-icon--success__hide-corners{
+  box-sizing:content-box;
+}
+.swal-button--cancel{
+  color:#fff;
+}
+
+.form-check-input,.form-radio-input{
+  -webkit-appearance:none;
+}
+.form-check-label{
+  position:relative;
+  padding:0 0 0 20px;
+  &:after{
+    overflow:hidden;
+    position:absolute;
+    top:50%;
+    left:0;
+    width:15px;
+    height:15px;
+    margin-top:-7px;
+    background:url('../img/sp_chk.png') no-repeat;
+    content:'';
+  }
+  input[type=radio] + &{
+    &:after{
+      background-position:-16px 0;
+    }
+  }
+}
+.form-check-input{
+  &:checked + .form-check-label{
+    &:after{
+      background-position:0 -16px;
+    }
+  }
+  &:disabled + .form-check-label{
+    color:#b2b2b2;
+    &:after{
+      background-position:0 -32px;
+    }
+  }
+}
+input[type=radio].form-check-input{
+  &:checked + .form-check-label{
+    &:after{
+      background-position:-16px -16px;
+    }
+  }
+  &:disabled + .form-check-label{
+    color:#b2b2b2;
+    &:after{
+      background-position:-16px -32px;
+    }
+  }
+}
+
+.progress-bar{
+  background-color:#292929;
 }
